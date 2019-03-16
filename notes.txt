@@ -30,3 +30,11 @@ This helps in time travel to implement undo and redo functionalilties without mo
 Helps in "Optimizing the Performance"
 
 9) Function Components = Components with only render() and no own state, so no need to extend from React.Component.
+
+10) Array push() vs concat()
+Concat method doesn't mutate the original array.
+
+11) Always have key assigned to a list, to avoid jumbled list.
+<li key={user.id}>{user.name}:{user.taskCount} tasks left</li>
+Note: this.state.key is not possible as React uses this internally to update components.
+A component can't insquire about ts key.
