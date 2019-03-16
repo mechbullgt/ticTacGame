@@ -1,0 +1,32 @@
+Button onClick
+1) Notice how with onClick={() => alert('click')}, we’re passing a function as the onClick prop. React will only call this function after a click. Forgetting () => and writing onClick={alert('click')} is a common mistake, and would fire the alert every time the component re-renders.
+
+State
+2) We want the Square component to “remember” that it got clicked, and fill it with an “X” mark. To “remember” things, components use state.
+
+this.state
+3) this.state is private to the React component it's defined in.
+
+Why super(props) in all the constructors?
+4) In JavaScript classes, you need to always call super when defining the constructor of a subclass. All React component classes that have a constructor should start it with a super(props) call.
+
+5) Analogy
+props = current account in a bank
+state = savings account in a bank
+
+6) Reacts Way for event and handlers.
+In React, it’s conventional to use on[Event] names for props which represent events and handle[Event] for the methods which handle the events.
+onClick() = Event attribute for the DOM Button
+handleClic() = method that handles the event
+
+7) Data change must be with mutation, i.e, immutability of the Data
+var player={score:1, name:'Maqbool'};
+var newPlayer = {...player, score:2}; //Object spread syntax, New player with score 2
+var newPlayer2 = Object.assign({},player, score:3);
+This helps in time travel to implement undo and redo functionalilties without modifyig the start state.
+
+8) Make "Pure Components" in React by using immutability of the data by determining if the changes made require a re-rendering of the application.
+"Pure Components" = shouldComponentUpdate()
+Helps in "Optimizing the Performance"
+
+9) Function Components = Components with only render() and no own state, so no need to extend from React.Component.
